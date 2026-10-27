@@ -43,18 +43,6 @@ training/
     └── ...
 ```
 
-#### Drafting a new training (`training-drafts` repo)
-
-`training` is **public**, and so are its branches and pull requests. New trainings are developed in the private `training-drafts` repo first:
-
-1. Copy `training-drafts/_template/`, rename it, and add it to the drafts table.
-2. Develop and get feedback there.
-3. Complete the review checklist in the `training-drafts` README (no PHI/PII, example data only, peer reviewed).
-4. Copy the finished folder into `training` via a pull request.
-5. Delete the draft (or mark it "Published"). All future edits happen in `training`.
-
-Small fixes to already-published trainings (typos, links, minor updates) can be made directly in `training` with a branch and pull request.
-
 ### Code and project resources (`shared-resources` and project repos)
 
 Copy `shared-resources/_template-project/`:

@@ -10,7 +10,6 @@ We use this space to share training materials, code, templates, and project reso
 | Repository | Purpose | Visibility |
 |---|---|---|
 | [`training`](https://github.com/nv-ose/training) | Workshops, tutorials, and learning materials (published at `https://nv-ose.github.io/training`) | Public |
-| [`training-drafts`](https://github.com/nv-ose/training-drafts) | Work-in-progress trainings before they're published (members only) | Private |
 | [`shared-resources`](https://github.com/nv-ose/shared-resources) | Internal reusable code, templates, scripts, and project materials (members only) | Private |
 | [`presentations`](https://github.com/nv-ose/presentations) | Conference talks, posters, briefings, and webinars | Private (public once cleared) |
 | [`team-hub`](https://github.com/nv-ose/team-hub) | Internal discussions, Q&A, and announcements (members only) | Private |
