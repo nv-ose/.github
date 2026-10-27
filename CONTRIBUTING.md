@@ -28,20 +28,23 @@ Templates for all structures below are included in the repos. **Copy the `_templ
 
 ### Training materials (`training` repo)
 
-Each workshop or tutorial gets its own folder (copy `training/_template/`):
+The `training` repo is a [Quarto](https://quarto.org) website published at <https://nv-ose.github.io/training/>. Each training gets its own folder in `pages/` (copy `training/_template/`):
 
 ```
 training/
-├── README.md                  # Index of all trainings
-├── intro-to-git/
-│   ├── README.md              # Overview, audience, learning objectives, prerequisites
-│   ├── slides/
-│   ├── exercises/
-│   ├── data/                  # Small example datasets only
-│   └── solutions/
-└── r-for-beginners/
-    └── ...
+├── _quarto.yml                # Site navigation and sidebars: add each new training here
+├── index.qmd                  # Site home page (list of trainings)
+├── pages/
+│   ├── intro-to-github/
+│   │   ├── index.qmd          # Overview, audience, learning objectives, prerequisites
+│   │   ├── 01-lesson-name.qmd # Numbered lessons
+│   │   └── exercises.qmd
+│   └── intro-to-r/
+│       └── ...
+└── docs/                      # Generated website. Never edit by hand
 ```
+
+After editing, run `quarto render` and commit the updated `docs/` folder too. See the `training` README for details.
 
 ### Code and project resources (`shared-resources` and project repos)
 
