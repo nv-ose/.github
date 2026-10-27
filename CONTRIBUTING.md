@@ -1,6 +1,6 @@
 # NV OSE GitHub Contributing Guidelines (SOP)
 
-**Version:** 1.0 · **Last updated:** [date] · **Maintainers:** [Owner 1], [Owner 2]
+**Version:** 1.0 · **Last updated:** [date] · **Maintainers:** Max Wegener, Jordan Lancaster
 
 These guidelines apply to every repository in the nv-ose organization. Following them keeps our work consistent, findable, and easy to hand off.
 
@@ -145,4 +145,4 @@ YYYY-MM-DD
 
 ## 10. Questions
 
-Contact [name] at [email], or open an issue in the `.github` repository.
+Contact Max Wegener at [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov), or open an issue in the `.github` repository.
