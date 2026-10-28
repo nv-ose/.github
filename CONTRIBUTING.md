@@ -28,7 +28,7 @@ These guidelines apply to every repository in the nv-ose organization. Following
 |---|---|
 | A **project**: several scripts, a pipeline, a recurring report or dashboard, its own collaborators | **Its own new repository** (Section 4) |
 | A **reusable piece**: a function, a template, a SQL query, a snippet others can copy | `shared-resources`, in the matching topic folder |
-| A **training** or tutorial | `training` |
+| A **training** or tutorial | The [Training submission form](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml) in `team-hub` (or `training` directly if you know Quarto) |
 | A **presentation**, poster, or briefing | `presentations` |
 | A **question, idea, or announcement** | [Discussions](https://github.com/orgs/nv-ose/discussions) |
 
@@ -184,7 +184,7 @@ New to this? The [Introduction to Git and GitHub](https://nv-ose.github.io/train
 
 | Repository | What to add | Steps |
 |---|---|---|
-| `training` | A new training or lesson | Copy `_template/` into `pages/`, add it to `_quarto.yml`, run `quarto render`, then open a PR. See the [training README](https://github.com/nv-ose/training#adding-a-training) |
+| `training` | A new training or lesson | **Most people:** [submit it through the Training submission form](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml) in `team-hub`. Max or Jordan converts it into web pages. **If you know Quarto:** build it yourself. See the [training README](https://github.com/nv-ose/training#adding-a-training) |
 | `shared-resources` | A reusable function, template, or snippet | Add it to the matching topic folder with a short README. See the [shared-resources README](https://github.com/nv-ose/shared-resources#adding-a-resource) |
 | `presentations` | Slides, a poster, or a briefing | Copy `_template/` to a `YYYY-MM-DD_event-name` folder, add PDFs. See the [presentations README](https://github.com/nv-ose/presentations#adding-a-presentation) |
 | `team-hub` | Questions, ideas, announcements | Don't add files. Start a [Discussion](https://github.com/orgs/nv-ose/discussions) |
