@@ -9,6 +9,7 @@ These guidelines apply to every repository in the nv-ose organization. Following
 ## 1. Before you start
 
 - Create a free GitHub account and enable **two-factor authentication**.
+- Install [GitHub Desktop](https://desktop.github.com/download/) (free, Mac and Windows) if you'll work with files on your computer. Not needed for editing on the GitHub website.
 - Ask an organization owner to add you to the appropriate team.
 - New to Git? Start with the materials in the [`training`](https://github.com/nv-ose/training) repo.
 
@@ -170,13 +171,14 @@ Best for adding a few files or small edits.
 
 Best for larger changes, code you run locally, or many files.
 
-1. **Clone** the repo once: **File → Clone repository**. Save it in `Documents/GitHub/NV-OSE/`.
-2. **Fetch origin / Pull origin** to get the latest version.
-3. **Current branch → New branch**, named `yourname/short-description`.
-4. Add or edit files in the repo folder on your computer, following the repo's folder structure (Section 6).
-5. In the **Changes** tab, **review every file**. No data, no credentials. Write a summary, then **Commit to `your-branch`**.
-6. Click **Publish branch**, then **Create Pull Request**. Add a reviewer on github.com and click **Create pull request**.
-7. After it's merged: switch back to `main` and click **Pull origin**.
+1. [Download GitHub Desktop](https://desktop.github.com/download/) if you don't have it, and sign in.
+2. **Clone** the repo once: **File → Clone repository**. Save it in `Documents/GitHub/NV-OSE/`.
+3. **Fetch origin / Pull origin** to get the latest version.
+4. **Current branch → New branch**, named `yourname/short-description`.
+5. Add or edit files in the repo folder on your computer, following the repo's folder structure (Section 6).
+6. In the **Changes** tab, **review every file**. No data, no credentials. Write a summary, then **Commit to `your-branch`**.
+7. Click **Publish branch**, then **Create Pull Request**. Add a reviewer on github.com and click **Create pull request**.
+8. After it's merged: switch back to `main` and click **Pull origin**.
 
 New to this? The [Introduction to Git and GitHub](https://nv-ose.github.io/training/pages/intro-to-github/) training walks through both, step by step.
 
