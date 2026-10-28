@@ -1,6 +1,6 @@
 # NV OSE GitHub Contributing Guidelines (SOP)
 
-**Version:** 1.0 · **Last updated:** [date] · **Maintainers:** Max Wegener, Jordan Lancaster
+**Version:** 1.1 · **Last updated:** 2026-10-28 · **Maintainers:** Max Wegener, Jordan Lancaster
 
 These guidelines apply to every repository in the nv-ose organization. Following them keeps our work consistent, findable, and easy to hand off.
 
@@ -22,7 +22,60 @@ These guidelines apply to every repository in the nv-ose organization. Following
 - Start file names with dates (`YYYY-MM-DD`) when order or version matters: `2026-11-05_workshop-slides.pdf`
 - Number files that run in sequence: `01_import.R`, `02_clean.R`, `03_analyze.R`
 
-## 3. Standard folder structures
+## 3. Where does my work go?
+
+| If it's… | Put it in… |
+|---|---|
+| A **project**: several scripts, a pipeline, a recurring report or dashboard, its own collaborators | **Its own new repository** (Section 4) |
+| A **reusable piece**: a function, a template, a SQL query, a snippet others can copy | `shared-resources`, in the matching topic folder |
+| A **training** or tutorial | `training` |
+| A **presentation**, poster, or briefing | `presentations` |
+| A **question, idea, or announcement** | [Discussions](https://github.com/orgs/nv-ose/discussions) |
+
+If a project contains a piece others could reuse (e.g., a REDCap upload function), keep it in the project **and** add a generalized copy to `shared-resources` with a link back to the project.
+
+## 4. Adding a new repository
+
+Members can create **private** repositories in nv-ose. Only owners can make a repository public.
+
+**Before the first commit**
+
+1. **Name it** following Section 2 (e.g., `respiratory-dashboard`, `measles-case-report`).
+2. **Add a `.gitignore` first.** It must exclude data folders, credentials (`.Renviron`, `.env`), old notes, and rendered output. Commit nothing until it's in place.
+3. **Check for secrets.** Search your code for passwords, tokens, and usernames. Credentials must be read from `~/.Renviron` or `.env` (for example `Sys.getenv("REDCAP_TOKEN")`), never typed into scripts. **Old notes and scratch files often contain credentials. Leave them out.**
+4. **Write a `README.md`** using the template in Section 12.
+
+**Creating it**
+
+5. In GitHub Desktop: **File → Add local repository → create a repository**. Review the **Changes** list: only code and documentation should be there, no data.
+6. Click **Publish repository**, set **Organization** to **nv-ose**, and keep **Keep this code private** checked.
+
+**After publishing**
+
+7. **Add a description and topics:** on the repo page, click ⚙️ next to **About**. Use topics from Section 5: at least one each for program area, data source, language, type, and status.
+8. **Set access:** **Settings → Collaborators and teams**. Add the team or people who need it. Give at least one other person **Admin** or **Maintain**, so the repo isn't stranded if you leave.
+9. **List it in the member directory:** add a row to the **Projects** table in [`.github-private/profile/README.md`](https://github.com/nv-ose/.github-private/blob/main/profile/README.md) with a pull request.
+10. **Optional:** add a `CODEOWNERS` file (`.github/CODEOWNERS` containing, e.g., `* @your-username`) so you're automatically asked to review changes.
+
+**Retiring a repository**
+
+When a project ends, change its `active` topic to `archived`, then go to **Settings → Danger Zone → Archive this repository**. Archived repos become read-only but stay searchable. Update its status in the member directory.
+
+## 5. Topics (tags)
+
+Topics let everyone filter repositories (search `topic:redcap` on the [org repositories page](https://github.com/orgs/nv-ose/repositories)). Use these standard topics: lowercase, with hyphens. Ask an owner before inventing new ones.
+
+| Category | Topics |
+|---|---|
+| Program area | `influenza`, `rsv`, `covid-19`, `respiratory-surveillance`, `syndromic-surveillance`, `vaccine-preventable`, `foodborne`, `std-hiv` |
+| Data source | `essence`, `redcap`, `ilinet`, `fluview`, `nedss` |
+| Language | `r`, `python`, `sql`, `quarto` |
+| Type | `pipeline`, `dashboard`, `report`, `training`, `template`, `functions` |
+| Status | `active`, `archived` |
+
+Example: `respiratory-dashboard` → `influenza`, `rsv`, `respiratory-surveillance`, `essence`, `redcap`, `ilinet`, `fluview`, `r`, `python`, `pipeline`, `dashboard`, `active`.
+
+## 6. Standard folder structures
 
 Templates for all structures below are included in the repos. **Copy the `_template` folder, rename it, and fill it in** — don't build from scratch.
 
@@ -79,15 +132,15 @@ presentations/
 
 Delete folders you don't need; don't invent new top-level folders without a good reason. (Empty folders contain a `.gitkeep` file so Git tracks them — delete it once the folder has content.)
 
-## 4. Required files
+## 7. Required files
 
 Every repository **must** have:
 
-- **`README.md`** — use the template in Section 9
+- **`README.md`** — use the template in Section 12
 - **`LICENSE`** — CC BY 4.0 for training and documentation; MIT for code (add via GitHub: *Add file → Create new file → name it `LICENSE` → Choose a license template*)
 - **`.gitignore`** — appropriate for the language used
 
-## 5. Workflow
+## 8. Workflow
 
 1. **Never commit directly to `main`** in shared repos. Create a branch:
    `yourname/short-description` (e.g., `mwegener/add-git-workshop`)
@@ -100,11 +153,11 @@ Every repository **must** have:
 - ✅ `Fix broken link in R tutorial README`
 - ❌ `stuff`, `update`, `final version 2`
 
-## 6. Issues
+## 9. Issues
 
 Use **Issues** to report problems, suggest improvements, or plan new content. Apply a label (`bug`, `enhancement`, `new-training`, `question`) and assign someone where possible.
 
-## 7. What NOT to upload
+## 10. What NOT to upload
 
 - ❌ Passwords, API keys, tokens, or credentials
 - ❌ Protected health information (PHI), personally identifiable information (PII), or any data subject to IRB, HIPAA, or FERPA restrictions
@@ -114,13 +167,13 @@ Use **Issues** to report problems, suggest improvements, or plan new content. Ap
 
 If something sensitive is committed by mistake, **tell an owner immediately**. Deleting the file is not enough, because it remains in the history.
 
-## 8. Visibility
+## 11. Visibility
 
 - **Public:** training materials and resources meant to be shared
 - **Private:** internal projects, drafts, or unpublished work
 - When in doubt, start private. Ask an owner before making a repository public.
 
-## 9. README template
+## 12. README template
 
 ```markdown
 # Title
@@ -146,6 +199,6 @@ CC BY 4.0 / MIT
 YYYY-MM-DD
 ```
 
-## 10. Questions
+## 13. Questions
 
 Contact Max Wegener at [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov), or open an issue in the `.github` repository.
