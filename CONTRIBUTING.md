@@ -148,6 +148,51 @@ Every repository **must** have:
 3. Open a **pull request** and request a review from at least one other team member.
 4. After approval, merge and delete the branch.
 
+**Who reviews:** the repo's maintainer, or an organization owner (Max Wegener or Jordan Lancaster) if you're not sure. Reviewers check that the change follows this SOP and **contains no data or credentials**, then merge it.
+
+### How to add or change files
+
+Pick whichever way you're comfortable with. Both end in a pull request.
+
+#### Option A: On the GitHub website (no software needed)
+
+Best for adding a few files or small edits.
+
+1. Open the repo on github.com and go to the folder you want to add to.
+2. **To add files:** click **Add file → Upload files**, then drag your files in.
+   **To edit a file:** open it and click the **pencil ✏️** icon.
+   **To create a file:** click **Add file → Create new file**. Type `folder-name/` in the name box to create a folder.
+3. Click **Commit changes…**, write a short message (Section 8), and choose **Create a new branch for this commit and start a pull request**.
+4. Click **Propose changes**, then **Create pull request**. Add a reviewer on the right.
+5. After it's approved and merged, delete the branch (GitHub offers a button).
+
+#### Option B: With GitHub Desktop
+
+Best for larger changes, code you run locally, or many files.
+
+1. **Clone** the repo once: **File → Clone repository**. Save it in `Documents/GitHub/NV-OSE/`.
+2. **Fetch origin / Pull origin** to get the latest version.
+3. **Current branch → New branch**, named `yourname/short-description`.
+4. Add or edit files in the repo folder on your computer, following the repo's folder structure (Section 6).
+5. In the **Changes** tab, **review every file**. No data, no credentials. Write a summary, then **Commit to `your-branch`**.
+6. Click **Publish branch**, then **Create Pull Request**. Add a reviewer on github.com and click **Create pull request**.
+7. After it's merged: switch back to `main` and click **Pull origin**.
+
+New to this? The [Introduction to Git and GitHub](https://nv-ose.github.io/training/pages/intro-to-github/) training walks through both, step by step.
+
+### Where to add things in each repository
+
+| Repository | What to add | Steps |
+|---|---|---|
+| `training` | A new training or lesson | Copy `_template/` into `pages/`, add it to `_quarto.yml`, run `quarto render`, then open a PR. See the [training README](https://github.com/nv-ose/training#adding-a-training) |
+| `shared-resources` | A reusable function, template, or snippet | Add it to the matching topic folder with a short README. See the [shared-resources README](https://github.com/nv-ose/shared-resources#adding-a-resource) |
+| `presentations` | Slides, a poster, or a briefing | Copy `_template/` to a `YYYY-MM-DD_event-name` folder, add PDFs. See the [presentations README](https://github.com/nv-ose/presentations#adding-a-presentation) |
+| `team-hub` | Questions, ideas, announcements | Don't add files. Start a [Discussion](https://github.com/orgs/nv-ose/discussions) |
+| `.github-private` | Your project in the member directory | Add a row to the Projects table. See the [.github-private README](https://github.com/nv-ose/.github-private#adding-your-project-to-the-member-directory) |
+| `.github` | Changes to this SOP or the public profile | Edit with a PR. Owners approve SOP changes |
+| A project repo | Changes to that project | Branch and PR. Follow the project's own README |
+| **A new project** | A whole new repository | Section 4 |
+
 **Commit messages:** start with a verb in the present tense and describe what changed.
 - ✅ `Add exercises for intro-to-git workshop`
 - ✅ `Fix broken link in R tutorial README`
